@@ -1521,7 +1521,7 @@
       // for `position: absolute` we need to get the parent's offset.
       if (Element.getStyle(element, 'position') === 'absolute') {
         var parent = Element.getOffsetParent(element);
-        if (parent !== document.body) delta = Element.viewportOffset(parent);
+        if (parent == document.body) delta = Element.viewportOffset(parent);
       }
     }
 
