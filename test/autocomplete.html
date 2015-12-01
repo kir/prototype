@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax.Autocompleter</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.2.0/prototype.js"></script>
+    <script src="https://yandex.st/scriptaculous/1.9.0/effects.js"></script>
+    <script src="https://yandex.st/scriptaculous/1.9.0/controls.js"></script>
+    <style type="text/css">
+        div.autocomplete {
+          position:absolute;
+          width:250px;
+          background-color:white;
+          border:1px solid #888;
+          margin:0;
+          padding:0;
+        }
+        div.autocomplete ul {
+          list-style-type:none;
+          margin:0;
+          padding:0;
+        }
+        div.autocomplete ul li.selected { background-color: #ffb;}
+        div.autocomplete ul li {
+          list-style-type:none;
+          display:block;
+          margin:0;
+          padding:2px;
+          height:32px;
+          cursor:pointer;
+        }
+        .warning {color:red;border-top:1px solid grey;}
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga dolorum quis veniam, sequi provident nisi asperiores voluptatum maxime nulla officia ad quas, iusto tenetur minus inventore, quo aspernatur magnam ab?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, esse.</p>
+    <p class="warning">Scroll down this line and in input start typing "y"</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus saepe blanditiis quasi, quia recusandae quisquam soluta facere maiores, voluptates voluptatum!</p>
+    <input type="text" id="autocomplete" name="autocomplete_parameter"/>
+    <div id="autocomplete_choices" class="autocomplete"></div>
+    <div>Start typing "y"</div>
+    <div id="result"></div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis omnis aut quia saepe temporibus, iste itaque quis, eos sit a ad, deserunt fugiat nesciunt vitae dolore atque perferendis ex esse illo perspiciatis illum amet. Sunt quaerat, esse tempora facilis, reiciendis molestias laborum. Dolorum, culpa nesciunt rem! Sed quibusdam perspiciatis, quo distinctio nisi id accusamus animi tempora cum sunt ullam similique dolor necessitatibus deleniti tempore repudiandae nobis, inventore corrupti. Quisquam nobis qui molestias quas voluptates corporis consequuntur quasi aspernatur, illo perferendis! Fuga alias similique maiores quibusdam hic et asperiores pariatur nesciunt necessitatibus. Corporis deleniti aperiam, placeat quae voluptatum facere, nisi sequi!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis omnis aut quia saepe temporibus, iste itaque quis, eos sit a ad, deserunt fugiat nesciunt vitae dolore atque perferendis ex esse illo perspiciatis illum amet. Sunt quaerat, esse tempora facilis, reiciendis molestias laborum. Dolorum, culpa nesciunt rem! Sed quibusdam perspiciatis, quo distinctio nisi id accusamus animi tempora cum sunt ullam similique dolor necessitatibus deleniti tempore repudiandae nobis, inventore corrupti. Quisquam nobis qui molestias quas voluptates corporis consequuntur quasi aspernatur, illo perferendis! Fuga alias similique maiores quibusdam hic et asperiores pariatur nesciunt necessitatibus. Corporis deleniti aperiam, placeat quae voluptatum facere, nisi sequi!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis omnis aut quia saepe temporibus, iste itaque quis, eos sit a ad, deserunt fugiat nesciunt vitae dolore atque perferendis ex esse illo perspiciatis illum amet. Sunt quaerat, esse tempora facilis, reiciendis molestias laborum. Dolorum, culpa nesciunt rem! Sed quibusdam perspiciatis, quo distinctio nisi id accusamus animi tempora cum sunt ullam similique dolor necessitatibus deleniti tempore repudiandae nobis, inventore corrupti. Quisquam nobis qui molestias quas voluptates corporis consequuntur quasi aspernatur, illo perferendis! Fuga alias similique maiores quibusdam hic et asperiores pariatur nesciunt necessitatibus. Corporis deleniti aperiam, placeat quae voluptatum facere, nisi sequi!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis omnis aut quia saepe temporibus, iste itaque quis, eos sit a ad, deserunt fugiat nesciunt vitae dolore atque perferendis ex esse illo perspiciatis illum amet. Sunt quaerat, esse tempora facilis, reiciendis molestias laborum. Dolorum, culpa nesciunt rem! Sed quibusdam perspiciatis, quo distinctio nisi id accusamus animi tempora cum sunt ullam similique dolor necessitatibus deleniti tempore repudiandae nobis, inventore corrupti. Quisquam nobis qui molestias quas voluptates corporis consequuntur quasi aspernatur, illo perferendis! Fuga alias similique maiores quibusdam hic et asperiores pariatur nesciunt necessitatibus. Corporis deleniti aperiam, placeat quae voluptatum facere, nisi sequi!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis omnis aut quia saepe temporibus, iste itaque quis, eos sit a ad, deserunt fugiat nesciunt vitae dolore atque perferendis ex esse illo perspiciatis illum amet. Sunt quaerat, esse tempora facilis, reiciendis molestias laborum. Dolorum, culpa nesciunt rem! Sed quibusdam perspiciatis, quo distinctio nisi id accusamus animi tempora cum sunt ullam similique dolor necessitatibus deleniti tempore repudiandae nobis, inventore corrupti. Quisquam nobis qui molestias quas voluptates corporis consequuntur quasi aspernatur, illo perferendis! Fuga alias similique maiores quibusdam hic et asperiores pariatur nesciunt necessitatibus. Corporis deleniti aperiam, placeat quae voluptatum facere, nisi sequi!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis omnis aut quia saepe temporibus, iste itaque quis, eos sit a ad, deserunt fugiat nesciunt vitae dolore atque perferendis ex esse illo perspiciatis illum amet. Sunt quaerat, esse tempora facilis, reiciendis molestias laborum. Dolorum, culpa nesciunt rem! Sed quibusdam perspiciatis, quo distinctio nisi id accusamus animi tempora cum sunt ullam similique dolor necessitatibus deleniti tempore repudiandae nobis, inventore corrupti. Quisquam nobis qui molestias quas voluptates corporis consequuntur quasi aspernatur, illo perferendis! Fuga alias similique maiores quibusdam hic et asperiores pariatur nesciunt necessitatibus. Corporis deleniti aperiam, placeat quae voluptatum facere, nisi sequi!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis omnis aut quia saepe temporibus, iste itaque quis, eos sit a ad, deserunt fugiat nesciunt vitae dolore atque perferendis ex esse illo perspiciatis illum amet. Sunt quaerat, esse tempora facilis, reiciendis molestias laborum. Dolorum, culpa nesciunt rem! Sed quibusdam perspiciatis, quo distinctio nisi id accusamus animi tempora cum sunt ullam similique dolor necessitatibus deleniti tempore repudiandae nobis, inventore corrupti. Quisquam nobis qui molestias quas voluptates corporis consequuntur quasi aspernatur, illo perferendis! Fuga alias similique maiores quibusdam hic et asperiores pariatur nesciunt necessitatibus. Corporis deleniti aperiam, placeat quae voluptatum facere, nisi sequi!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis omnis aut quia saepe temporibus, iste itaque quis, eos sit a ad, deserunt fugiat nesciunt vitae dolore atque perferendis ex esse illo perspiciatis illum amet. Sunt quaerat, esse tempora facilis, reiciendis molestias laborum. Dolorum, culpa nesciunt rem! Sed quibusdam perspiciatis, quo distinctio nisi id accusamus animi tempora cum sunt ullam similique dolor necessitatibus deleniti tempore repudiandae nobis, inventore corrupti. Quisquam nobis qui molestias quas voluptates corporis consequuntur quasi aspernatur, illo perferendis! Fuga alias similique maiores quibusdam hic et asperiores pariatur nesciunt necessitatibus. Corporis deleniti aperiam, placeat quae voluptatum facere, nisi sequi!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis omnis aut quia saepe temporibus, iste itaque quis, eos sit a ad, deserunt fugiat nesciunt vitae dolore atque perferendis ex esse illo perspiciatis illum amet. Sunt quaerat, esse tempora facilis, reiciendis molestias laborum. Dolorum, culpa nesciunt rem! Sed quibusdam perspiciatis, quo distinctio nisi id accusamus animi tempora cum sunt ullam similique dolor necessitatibus deleniti tempore repudiandae nobis, inventore corrupti. Quisquam nobis qui molestias quas voluptates corporis consequuntur quasi aspernatur, illo perferendis! Fuga alias similique maiores quibusdam hic et asperiores pariatur nesciunt necessitatibus. Corporis deleniti aperiam, placeat quae voluptatum facere, nisi sequi!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis omnis aut quia saepe temporibus, iste itaque quis, eos sit a ad, deserunt fugiat nesciunt vitae dolore atque perferendis ex esse illo perspiciatis illum amet. Sunt quaerat, esse tempora facilis, reiciendis molestias laborum. Dolorum, culpa nesciunt rem! Sed quibusdam perspiciatis, quo distinctio nisi id accusamus animi tempora cum sunt ullam similique dolor necessitatibus deleniti tempore repudiandae nobis, inventore corrupti. Quisquam nobis qui molestias quas voluptates corporis consequuntur quasi aspernatur, illo perferendis! Fuga alias similique maiores quibusdam hic et asperiores pariatur nesciunt necessitatibus. Corporis deleniti aperiam, placeat quae voluptatum facere, nisi sequi!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis omnis aut quia saepe temporibus, iste itaque quis, eos sit a ad, deserunt fugiat nesciunt vitae dolore atque perferendis ex esse illo perspiciatis illum amet. Sunt quaerat, esse tempora facilis, reiciendis molestias laborum. Dolorum, culpa nesciunt rem! Sed quibusdam perspiciatis, quo distinctio nisi id accusamus animi tempora cum sunt ullam similique dolor necessitatibus deleniti tempore repudiandae nobis, inventore corrupti. Quisquam nobis qui molestias quas voluptates corporis consequuntur quasi aspernatur, illo perferendis! Fuga alias similique maiores quibusdam hic et asperiores pariatur nesciunt necessitatibus. Corporis deleniti aperiam, placeat quae voluptatum facere, nisi sequi!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis omnis aut quia saepe temporibus, iste itaque quis, eos sit a ad, deserunt fugiat nesciunt vitae dolore atque perferendis ex esse illo perspiciatis illum amet. Sunt quaerat, esse tempora facilis, reiciendis molestias laborum. Dolorum, culpa nesciunt rem! Sed quibusdam perspiciatis, quo distinctio nisi id accusamus animi tempora cum sunt ullam similique dolor necessitatibus deleniti tempore repudiandae nobis, inventore corrupti. Quisquam nobis qui molestias quas voluptates corporis consequuntur quasi aspernatur, illo perferendis! Fuga alias similique maiores quibusdam hic et asperiores pariatur nesciunt necessitatibus. Corporis deleniti aperiam, placeat quae voluptatum facere, nisi sequi!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis omnis aut quia saepe temporibus, iste itaque quis, eos sit a ad, deserunt fugiat nesciunt vitae dolore atque perferendis ex esse illo perspiciatis illum amet. Sunt quaerat, esse tempora facilis, reiciendis molestias laborum. Dolorum, culpa nesciunt rem! Sed quibusdam perspiciatis, quo distinctio nisi id accusamus animi tempora cum sunt ullam similique dolor necessitatibus deleniti tempore repudiandae nobis, inventore corrupti. Quisquam nobis qui molestias quas voluptates corporis consequuntur quasi aspernatur, illo perferendis! Fuga alias similique maiores quibusdam hic et asperiores pariatur nesciunt necessitatibus. Corporis deleniti aperiam, placeat quae voluptatum facere, nisi sequi!</p>
+    <script>
+(function(){
+    new Ajax.Autocompleter("autocomplete", "autocomplete_choices", "./autocomplete-list.html", {
+      afterUpdateElement : getSelectionId,
+      method:"GET"
+    });
+
+    function getSelectionId(text, li) {
+        //alert (li.id);
+        $('result').innerHTML = 'Result: ' + li.innerHTML;
+    }
+})();
+    </script>
+</body>
+</html>
